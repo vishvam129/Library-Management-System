@@ -1,4 +1,38 @@
 
+# **Create Superuser for Authentication**
+
+Before implementing authentication for your API, you need to create a **superuser** in Django.
+---
+
+## **Steps to Create a Superuser**
+
+### **1. Run the Superuser Creation Command**
+
+In your terminal, run the following command:
+```bash
+python manage.py createsuperuser
+```
+
+---
+
+### **2. Enter the Required Information**
+
+When prompted, enter the following details:
+
+1. **Username**: Choose a unique username for the superuser.
+2. **Email Address**: Provide a valid email address for the superuser.
+3. **Password**: Enter a strong password and confirm it.
+
+#### **Example Input**
+```plaintext
+Username (leave blank to use 'admin'): admin_user
+Email address: admin@example.com
+Password: ********
+Password (again): ********
+Superuser created successfully.
+```
+
+---
 
 ## **Authentication**
 
