@@ -3,8 +3,6 @@ from django.utils.timezone import now
 
 # Create your models here.
 
-from django.contrib.auth.models import User
-
 class Book(models.Model):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=100)

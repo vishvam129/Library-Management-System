@@ -6,7 +6,7 @@ class BookSerializer(serializers.ModelSerializer):
         model = Book
         fields = '__all__'
 
-from datetime import date, datetime
+from datetime import  datetime
 
 class MemberSerializer(serializers.ModelSerializer):
     membership_date = serializers.SerializerMethodField()
