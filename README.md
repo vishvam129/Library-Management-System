@@ -543,3 +543,157 @@ curl -X GET http://127.0.0.1:8000/api/loans/1/ \
 
 ---
 
+# **Search for Books by Title, Author, and Genre API Documentation**
+
+The **Search for Books API** allows users to search for books based on the following criteria:
+- **Title**
+- **Author**
+- **Genre**
+- Combination of all parameters
+
+The API supports **query parameters** for filtering the results.
+
+---
+
+## **Endpoint**
+
+- **URL**: `/api/books/search/`
+- **Method**: `GET`
+- **Description**: Retrieve books filtered by **title**, **author**, **genre**, or any combination of these.
+
+---
+
+## **Query Parameters**
+
+You can filter books using the following query parameters:
+
+- **`title`** *(optional)*: Filter books by title (partial or full matches allowed).
+- **`author`** *(optional)*: Filter books by author name (partial or full matches allowed).
+- **`genre`** *(optional)*: Filter books by genre (partial or full matches allowed).
+
+You can combine multiple parameters to refine your search.
+
+---
+
+## **Request Example**
+
+### **1. Search by Title**
+
+
+- **Request**:
+  ```bash
+  GET /api/books/search/?title=Book
+  ```
+
+- **Example cURL Request**:
+  ```bash
+  curl -X GET "http://127.0.0.1:8000/api/books/search/?title=Book"
+  ```
+
+- **Example Response**:
+  ```json
+  [
+      {
+          "id": 1,
+          "title": "Book",
+          "author": "Author",
+          "genre": "Science",
+          "copies": 5
+      }
+  ]
+  ```
+
+---
+
+### **2. Search by Author**
+
+
+- **Request**:
+  ```bash
+  GET /api/books/search/?author=Author
+  ```
+
+- **Example cURL Request**:
+  ```bash
+  curl -X GET "http://127.0.0.1:8000/api/books/search/?author=Author"
+  ```
+
+- **Example Response**:
+  ```json
+  [
+      {
+          "id": 1,
+          "title": "Book",
+          "author": "Author",
+          "genre": "Science",
+          "copies": 5
+      }
+  ]
+  ```
+
+---
+
+### **3. Search by Genre**
+
+
+- **Request**:
+  ```bash
+  GET /api/books/search/?genre=Science
+  ```
+
+- **Example cURL Request**:
+  ```bash
+  curl -X GET "http://127.0.0.1:8000/api/books/search/?genre=Science"
+  ```
+
+- **Example Response**:
+  ```json
+  [
+     {
+          "id": 1,
+          "title": "Book",
+          "author": "Author",
+          "genre": "Science",
+          "copies": 5
+      }
+  ]
+  ```
+
+---
+
+### **4. Search by Multiple Criteria (Title, Author, and Genre)**
+
+
+- **Request**:
+  ```bash
+  GET /api/books/search/?title=Book&author=Author&genre=Science
+  ```
+
+- **Example cURL Request**:
+  ```bash
+  curl -X GET "http://127.0.0.1:8000/api/books/search/?title=Book&author=Author&genre=Science"
+  ```
+
+- **Example Response**:
+  ```json
+  [
+     {
+          "id": 1,
+          "title": "Book",
+          "author": "Author",
+          "genre": "Science",
+          "copies": 5
+      }
+  ]
+  ```
+
+---
+
+### **5. No Matching Results**
+
+If no books match the search criteria, the API will return an empty array.
+
+- **Example Response**:
+  ```json
+  []
+  ```
