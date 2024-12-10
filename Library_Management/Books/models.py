@@ -14,7 +14,7 @@ class Book(models.Model):
     
 class Members(models.Model):
     name = models.CharField(max_length=255)
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     phone_number = models.CharField(max_length=15)
     address = models.TextField(blank=True, null=True)
     membership_date = models.DateField(default=now)  
